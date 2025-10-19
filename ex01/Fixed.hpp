@@ -1,4 +1,5 @@
-
+#include <ostream>
+#include <stdint.h>
 class Fixed {
     public:
     Fixed();
@@ -6,8 +7,8 @@ class Fixed {
     Fixed(float fnum);
     ~Fixed();
     Fixed(Fixed &source);
-    void operator=(Fixed &source);
-    void operator<<(Fixed &source);
+    Fixed(const Fixed &source);
+    Fixed& operator=(const Fixed &source);
     int getRawBits() const;
     void setRawBits(int const raw);
     float toFloat( void ) const;
@@ -24,3 +25,5 @@ class Fixed {
     static const int kFixedPointBits = 32;
     static const uint32_t kFloatHiddenBit = (1u << 23);
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& source);
