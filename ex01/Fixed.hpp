@@ -17,13 +17,6 @@ class Fixed {
     private:
     int fixedPointNum_;
     static const int fractionalBits_ = 8;
-    static const int kBias = 127;
-    static const int kFloatSignBitPos = 31;
-    static const int kFloatExponentBitPos = 23;
-    static const int kFloatExponentBits = 8;
-    static const int kFloatFractionBits = 23;
-    static const int kFixedPointBits = 32;
-    static const uint32_t kFloatHiddenBit = (1u << 23);
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& source);

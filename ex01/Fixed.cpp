@@ -48,18 +48,6 @@ void Fixed::setRawBits(int const raw) {
     fixedPointNum_ = raw;
 }
 
-int countLeadingZero(uint32_t x) {
-    if (x == 0) 
-        return 32;
-    int count = 0;
-    uint32_t mask = 1u << 31;
-    while ((x & mask) == 0) {
-        count++;
-        mask >>= 1;
-    }
-    return count;
-}
-
 float Fixed::toFloat(void) const {
     return (float)getRawBits() / (1 << fractionalBits_);
 }
