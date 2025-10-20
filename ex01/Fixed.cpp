@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 #include <iostream>
-#include <cstring> // memcpy
 # include <cmath>
 
 Fixed::Fixed() : fixedPointNum_(0) {
